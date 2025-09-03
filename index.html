@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suficy Services | Discord Bots & Web</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- AOS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+/* ===== Global ===== */
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+body { font-family:'Roboto', sans-serif; background:#f5f5f8; color:#111; overflow-x:hidden; }
+a { text-decoration:none; color:inherit; }
+
+/* ===== Cursor ===== */
+.cursor { width:20px; height:20px; border-radius:50%; position:fixed; pointer-events:none; transform:translate(-50%, -50%); background: linear-gradient(45deg,#1dd1a1,#576574); z-index:9999; mix-blend-mode:difference; transition:0.15s ease-out; }
+
+/* ===== Header ===== */
+header {
+  position:fixed; top:0; left:0; width:100%; z-index:1000;
+  background:#ffffffee; backdrop-filter: blur(12px); padding:15px 50px;
+  display:flex; justify-content:space-between; align-items:center; box-shadow:0 5px 30px rgba(0,0,0,0.1);
+}
+header h1 { font-size:2rem; color:#1dd1a1; font-weight:700; font-family:'Montserrat',sans-serif; }
+header nav { display:flex; gap:25px; }
+header nav a { padding:8px 15px; border-radius:8px; font-weight:500; transition:0.3s; color:#111; }
+header nav a:hover { background:#1dd1a133; color:#1dd1a1; }
+
+/* ===== Hero ===== */
+#hero { height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; position:relative; background:#e0f7f1; overflow:hidden; }
+#hero h1 { font-size:4rem; font-family:'Montserrat',sans-serif; background: linear-gradient(90deg,#1dd1a1,#576574,#00a8ff); -webkit-background-clip:text; color:transparent; animation:fadeInUp 1.8s ease forwards; }
+#hero p { font-size:1.3rem; margin-top:20px; max-width:700px; line-height:1.6; color:#555; }
+.hero-btn { margin-top:30px; padding:15px 35px; border-radius:12px; border:none; font-weight:600; cursor:pointer; background: linear-gradient(45deg,#1dd1a1,#00a8ff); color:#fff; font-size:1.1rem; transition:0.3s; }
+.hero-btn:hover { transform:scale(1.05); box-shadow:0 0 20px #1dd1a1,0 0 30px #00a8ff; }
+
+/* ===== Secciones ===== */
+section { padding:80px 20px; }
+section h2 { font-size:2.5rem; color:#1dd1a1; margin-bottom:40px; text-align:center; font-family:'Montserrat',sans-serif; }
+section p { max-width:800px; margin:10px auto; text-align:center; color:#555; }
+
+/* ===== Servicios Destacados ===== */
+.servicios-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.servicio {
+  background:#ffffff; border-radius:20px; padding:30px; width:300px; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition:0.3s; text-align:center;
+}
+.servicio i { font-size:2.5rem; color:#576574; margin-bottom:15px; transition:0.3s; }
+.servicio h3 { margin-bottom:10px; font-family:'Montserrat',sans-serif; color:#1dd1a1; }
+.servicio p { color:#555; line-height:1.5; }
+.servicio:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 15px 35px rgba(0,0,0,0.15); }
+.servicio:hover i { color:#1dd1a1; }
+
+/* ===== Animaciones ===== */
+@keyframes fadeInUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+
+/* ===== Responsive ===== */
+@media(max-width:768px){ 
+  #hero h1 { font-size:3rem; }
+  header { flex-direction:column; gap:15px; padding:15px 20px; }
+  header nav { flex-direction:column; gap:12px; width:100%; text-align:center; }
+  .servicios-container { flex-direction:column; align-items:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor"></div>
+
+<!-- Header -->
+<header>
+  <h1> Suficy Services</h1>
+  <nav>
+    <a href="#hero">Inicio</a>
+    <a href="#sobre-mi">Sobre</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#skills">Skills</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="container">
+    <h1>Discord Bots & Web Profesional</h1>
+    <p>Automatizaciones, bots de Discord y páginas web modernas para tu proyecto o empresa.</p>
+    <button class="hero-btn">Contactate</button>
+  </div>
+</section>
+
+<!-- Sobre -->
+<section id="sobre-mi">
+  <div class="container">
+    <h2>Sobre Suficy Services</h2>
+    <p>Especializados en bots de Discord, automatizaciones y páginas web profesionales. Ofrecemos soluciones digitales eficientes, rápidas y escalables para empresas y usuarios individuales.</p>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section id="servicios">
+  <div class="container">
+    <h2>Servicios Destacados</h2>
+    <div class="servicios-container">
+      <div class="servicio" data-aos="fade-up">
+        <i class="fab fa-discord"></i>
+        <h3>Bots Discord</h3>
+        <p>Creación de bots personalizados, comandos, roles, economía y sistemas automáticos.</p>
+      </div>
+      <div class="servicio" data-aos="fade-up">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Páginas Web</h3>
+        <p>Diseños modernos, responsivos y optimizados con experiencia de usuario profesional.</p>
+      </div>
+      <div class="servicio" data-aos="fade-up">
+        <i class="fas fa-cogs"></i>
+        <h3>Automatizaciones</h3>
+        <p>Procesos automáticos para tu servidor, empresa o proyectos digitales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Servicios Streaming & Software -->
+<section id="servicios-streaming" data-aos="fade-up" style="padding:60px 20px; background:linear-gradient(135deg,#f0f9f9,#d1f2f2); border-radius:20px; margin:50px auto; max-width:1200px; text-align:center;">
+  <h2 style="color:#1dd1a1; margin-bottom:40px;">🎬 Servicios de Streaming & Software – Precios Finales</h2>
+  <div class="streaming-container" style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
+    
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Disney+</h3>
+      <p style="font-weight:600; color:#00a8ff;">$1.00</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Netflix</h3>
+      <p style="font-weight:600; color:#00a8ff;">$1.50</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>HBO Max</h3>
+      <p style="font-weight:600; color:#00a8ff;">$1.20</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Crunchyroll</h3>
+      <p style="font-weight:600; color:#00a8ff;">$0.80</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Spotify Premium FA</h3>
+      <p style="font-weight:600; color:#00a8ff;">$2.50</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Duolingo Pro FA</h3>
+      <p style="font-weight:600; color:#00a8ff;">$1.50</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Dazn (countries)</h3>
+      <p style="font-weight:600; color:#00a8ff;">$1.60</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Steam random</h3>
+      <p style="font-weight:600; color:#00a8ff;">$0.50</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>MyStake lifetime</h3>
+      <p style="font-weight:600; color:#00a8ff;">$0.90</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Tunnelbear FA</h3>
+      <p style="font-weight:600; color:#00a8ff;">$0.90</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Xbox Gamepass Std lft</h3>
+      <p style="font-weight:600; color:#00a8ff;">$3.00</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Xbox Gamepass Ultimate</h3>
+      <p style="font-weight:600; color:#00a8ff;">$6.00</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>Minecraft Java+Bedrock NFA</h3>
+      <p style="font-weight:600; color:#00a8ff;">$7.00</p>
+    </div>
+
+    <div class="servicio" style="background:#ffffff; padding:20px; border-radius:20px; width:180px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <h3>ExitLag 1 month trial</h3>
+      <p style="font-weight:600; color:#00a8ff;">$2.50</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Hover effect para todas las tarjetas
+document.querySelectorAll('.servicio').forEach(card => {
+  card.addEventListener('mouseenter', () => { 
+    card.style.transform = 'scale(1.05) translateY(-5px)'; 
+    card.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+  });
+  card.addEventListener('mouseleave', () => { 
+    card.style.transform = 'scale(1) translateY(0)'; 
+    card.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+  });
+});
+</script>
+<!-- Skills -->
+<section id="skills">
+  <div class="container">
+    <h2>Habilidades Profesionales</h2>
+    <div class="skills-container" style="display:flex; flex-wrap:wrap; gap:25px; justify-content:center;">
+      <div class="skill" style="width:250px;">
+        <p>HTML / CSS 💻 <span class="percent">0%</span></p>
+        <div class="skill-bar" style="background:#e0f7f1; border-radius:10px; overflow:hidden;">
+          <div data-width="95%" style="height:12px; background:#1dd1a1; width:0%; transition:1s;"></div>
+        </div>
+      </div>
+      <div class="skill" style="width:250px;">
+        <p>JavaScript ⚙️ <span class="percent">0%</span></p>
+        <div class="skill-bar" style="background:#e0f7f1; border-radius:10px; overflow:hidden;">
+          <div data-width="90%" style="height:12px; background:#00a8ff; width:0%; transition:1s;"></div>
+        </div>
+      </div>
+      <div class="skill" style="width:250px;">
+        <p>Node.js 🟢 <span class="percent">0%</span></p>
+        <div class="skill-bar" style="background:#e0f7f1; border-radius:10px; overflow:hidden;">
+          <div data-width="85%" style="height:12px; background:#576574; width:0%; transition:1s;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contadores -->
+<section id="contadores" style="background:linear-gradient(135deg,#e0f7f1,#dff9fb); padding:60px 20px;">
+  <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-around; gap:30px; text-align:center;">
+    <div class="contador">
+      <h3 class="count" data-target="150">0</h3>
+      <p>Proyectos Completados</p>
+    </div>
+    <div class="contador">
+      <h3 class="count" data-target="3000">0</h3>
+      <p>Horas de Código</p>
+    </div>
+    <div class="contador">
+      <h3 class="count" data-target="120">0</h3>
+      <p>Clientes Felices</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto">
+  <div class="container" style="text-align:center;">
+    <h2>Contacto Profesional</h2>
+    <p>Para contratar nuestros servicios de bots, páginas web o automatizaciones, escribinos a:</p>
+    <h3 style="color:#1dd1a1; margin-top:15px;">suficymax@gmail.com</h3>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="text-align:center; padding:25px 0; background:#ffffffee; border-top:1px solid #1dd1a1; margin-top:50px;">
+  <p>&copy; 2025 Suficy Services. Todos los derechos reservados.</p>
+  <div style="margin-top:10px;">
+    <a href="#" style="margin:0 10px; color:#1dd1a1;"><i class="fab fa-linkedin fa-lg"></i></a>
+    <a href="#" style="margin:0 10px; color:#1dd1a1;"><i class="fab fa-github fa-lg"></i></a>
+    <a href="#" style="margin:0 10px; color:#1dd1a1;"><i class="fab fa-twitter fa-lg"></i></a>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration:1200, once:true });
+
+// Cursor personalizado
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+// Animación Skills (barras + porcentajes)
+document.querySelectorAll('.skill').forEach(skill => {
+  const bar = skill.querySelector('.skill-bar div');
+  const percent = skill.querySelector('.percent');
+  const target = parseInt(bar.getAttribute('data-width'));
+  let width = 0;
+
+  const animate = () => {
+    if(width < target){
+      width++;
+      bar.style.width = width + '%';
+      percent.innerText = width + '%';
+      requestAnimationFrame(animate);
+    } else {
+      bar.style.width = target + '%';
+      percent.innerText = target + '%';
+    }
+  }
+
+  setTimeout(animate, 500);
+});
+
+// Contadores animados (Proyectos, Horas, Clientes)
+const counters = document.querySelectorAll('.count');
+counters.forEach(counter => {
+  counter.innerText = '0';
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const increment = Math.ceil(target / 200);
+    if(count < target){
+      counter.innerText = count + increment > target ? target : count + increment;
+      requestAnimationFrame(updateCount);
+    } else {
+      counter.innerText = target;
+    }
+  }
+  setTimeout(updateCount, 500);
+});
+</script>
